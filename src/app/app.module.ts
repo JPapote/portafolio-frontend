@@ -10,7 +10,9 @@ import { HardAndSoftSkillsComponent } from './components/hard-and-soft-skills/ha
 import { MyProjectsComponent } from './components/my-projects/my-projects.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { LoginComponent } from './components/login/login.component';
-
+import {AppRouting} from './app-routing/app-routing.module'
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { HomeComponent } from './components/home/home.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,10 +23,12 @@ import { LoginComponent } from './components/login/login.component';
     HardAndSoftSkillsComponent,
     MyProjectsComponent,
     LoginComponent,
-    
+    NotFoundComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+    AppRouting,
     NgCircleProgressModule.forRoot({
       "radius": 60,
       "space": -10,
