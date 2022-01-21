@@ -1,16 +1,40 @@
 <div class="container p-5 my-5">
-    <div >
+    <div class="row">
+      <div class="col-8">
     <h2>My First Bootstrap Page</h2>
   <p>This container has a border and some extra padding and margins.</p>
   <img src="..." class="img-fluid rounded-start" alt="..."/>
-  </div>
-  <div>
+</div>
+
+  <div *ngIf="authService()" class="col-4">
+  <app-button-delete></app-button-delete>
+  <app-button-edit></app-button-edit>
+</div>
+</div>
+
+<div class="row">
+  <div class="col-8">
     <h2>My First Bootstrap Page</h2>
   <p>This container has a border and some extra padding and margins.</p>
-  </div>
-  <div>
+  <img src="..." class="img-fluid rounded-start" alt="..."/>
+</div>
+  <div *ngIf="authService()" class="col-4">
+
+  <app-button-delete></app-button-delete>
+  <app-button-edit></app-button-edit>
+</div>
+</div>
+<div class="row">
+  <div class="col-8">
     <h2>My First Bootstrap Page</h2>
   <p>This container has a border and some extra padding and margins.</p>
-  </div>
+  <img src="..." class="img-fluid rounded-start" alt="..."/>
+</div>
+  <div *ngIf="authService()" class="col-4">
+  <app-button-delete></app-button-delete>
+  <app-button-edit></app-button-edit>
+</div>
+
+</div>
 
 </div>

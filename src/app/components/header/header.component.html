@@ -7,11 +7,16 @@
      </div>
         <div class="d-flex">
           <img src="../../../assets/img/logoArgentinaPrograma.jpg" alt="logoArgentinaPrograma" style="width:40px;" class="rounded-pill mx-2"/>
-          <button class="btn btn-primary" type="button"><a routerLink='/login'>Login</a></button>
+           <a routerLink='/login' routerLinkActive="active" class="navbar-text" *ngIf="!authService()">Login</a>
+           <a  routerLink='/home' class="navbar-text" routerLinkActive="active" (click)="logout()" *ngIf="authService()">Logout</a>
         </div>
     </div>
   </nav>
-  <div class=" bg-dark  text-white rounded">
+  <div class=" bg-dark rounded">
     <img src="../../../assets/img/Banner.jpg" alt="Banner" width="100%;" height="500px;"/>
+    
+  </div>
+  <div *ngIf="authService()" class="float-end me-5 ">
+  <app-button-edit></app-button-edit>
   </div>
 </div>

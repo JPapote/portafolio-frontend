@@ -13,6 +13,10 @@ import { LoginComponent } from './components/login/login.component';
 import {AppRouting} from './app-routing/app-routing.module'
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { HomeComponent } from './components/home/home.component';
+import { FormsModule } from '@angular/forms';
+import { ButtonDeleteComponent } from './components/button-delete/button-delete.component';
+import { ButtonEditComponent } from './components/button-edit/button-edit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,11 +28,14 @@ import { HomeComponent } from './components/home/home.component';
     MyProjectsComponent,
     LoginComponent,
     NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    ButtonDeleteComponent,
+    ButtonEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRouting,
+    FormsModule,
     NgCircleProgressModule.forRoot({
       "radius": 60,
       "space": -10,

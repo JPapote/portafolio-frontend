@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../service/auth.service';
 
 @Component({
   selector: 'app-hard-and-soft-skills',
@@ -8,10 +9,12 @@ import { Component, OnInit } from '@angular/core';
 export class HardAndSoftSkillsComponent implements OnInit {
 
   
-  constructor() { }
+  constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
 
   }
-
+  authService(){
+    return this.auth.logIn()
+  }
 }
