@@ -20,6 +20,7 @@
       <input type="text"  id="realizacion" placeholder="Enter realizacion" name="realizacion"  value={{realizacion}} [(ngModel)]="realizacion"/>
       <input type="file"  id="img"  name="file" (change)="readUrl($event)" /> 
       <app-button-edit></app-button-edit>
+      <app-button-delete (click)="deleteEducacion(edu.id)"></app-button-delete>
    </form>
   </div>
 </div>

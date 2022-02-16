@@ -46,4 +46,8 @@ export class ItemProjectsComponent implements OnInit {
     return this.auth.logIn()
   }
 
+  deleteProyecto(proyectoID:number){
+    this.editProyec.deleteDataProyecto(proyectoID)
+  }
+
 }

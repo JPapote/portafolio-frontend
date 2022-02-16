@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-button-delete',
@@ -7,12 +7,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonDeleteComponent implements OnInit {
 
+  @Input() elementID?:number
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onClick(){
-    console.log("Esto debe eliminarse")
-  }
+ 
 }

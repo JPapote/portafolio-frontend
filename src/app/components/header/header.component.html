@@ -14,12 +14,12 @@
             <img src="../../../assets/img/linke.jpg" alt="..." style="width:40px;" class="rounded-pill me-3 mt-1 p-1"/>
           </a>
            <a routerLink='/login' routerLinkActive="active" class="navbar-text" *ngIf="!authService()">Login</a>
-           <a  routerLink='/home' class="navbar-text" routerLinkActive="active" (click)="logout()" *ngIf="authService()">Logout</a>
+           <a  routerLink='/inicio' class="navbar-text" routerLinkActive="active" (click)="logout()" *ngIf="authService()">Logout</a>
         </div>
     </div>
   </nav>
   <div class=" bg-dark rounded">
-    <img src="http://localhost:8080/fileImagenes/{{img}}"   alt="Banner" width="100%;" height="500px;"/>
+    <img *ngIf="img" src="http://localhost:8080/fileImagenes/{{img}}"   alt="Banner" width="100%;" height="500px;"/>
     
   </div>
   <div *ngIf="authService()" class="float-end me-5 ">

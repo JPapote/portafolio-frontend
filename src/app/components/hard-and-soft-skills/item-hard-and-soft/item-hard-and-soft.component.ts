@@ -28,8 +28,13 @@ export class ItemHardAndSoftComponent implements OnInit {
     
   }
 
-  onSubmit(){
-const newData =  {
+  deleteHdb(elementID:number){
+    this.hdb.deleteDataHdb(elementID)
+  }
+
+  onSubmit(event:any){
+
+    const newData =  {
   
   nombre: this.nombre,
   nivel: this.nivel

@@ -17,7 +17,7 @@
       <input type="text"  id="periodo" placeholder="Enter periodo" name="periodo"  value={{expe.periodo}} [(ngModel)]="periodo"/>
       <input type="file"  id="img"  name="file" (change)="readUrl($event)" />
       <app-button-edit></app-button-edit>
-  <app-button-delete></app-button-delete>
+  <app-button-delete (click)="deleteExperiencia(expe.id)"></app-button-delete>
  
 </form>
 </div>

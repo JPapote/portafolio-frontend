@@ -5,9 +5,9 @@ import {LoginComponent} from '../components/login/login.component';
 import {NotFoundComponent} from '../components/not-found/not-found.component'
 
 const routes: Routes = [
-  {path:'home', component:HomeComponent},
+  {path:'inicio', component:HomeComponent},
   {path:'login', component: LoginComponent},
-  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: '', redirectTo: '/inicio', pathMatch: 'full'},
   {path:'**', component: NotFoundComponent}
   // {path: '', redirectTo: '/', pathMatch: 'full'},
 ];

@@ -61,4 +61,7 @@ export class ItemExperienceComponent implements OnInit {
       // reader.readAsDataURL(event.target.files[0]);
     }
   }
+  deleteExperiencia(elementID:number){
+    this.editarExperiencia.deleteDataExperiencia(elementID)
+  }
 }

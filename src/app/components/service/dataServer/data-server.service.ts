@@ -180,13 +180,36 @@ export class DataServerService {
   
 
     const hsk = this.http.put("http://localhost:8080/editarProyecto/"+id, newData, {headers})
-    // /editarHdb/{id}
-    hsk.subscribe(val => {
-      console.log(val)
-    })
+    
   }
-  deleteData(id: number) {
+  deleteDataHdb(id: number) {
+    const token = localStorage.getItem('auth_token')
+    let headers = new HttpHeaders()
+    .set("Authorization", "Bearer " + token)
+    const hdb = this.http.delete("http://localhost:8080/borrarInfoHdb/"+id, {headers})
+   
+  }
 
+  deleteDataExperiencia(id: number) {
+    const token = localStorage.getItem('auth_token')
+    let headers = new HttpHeaders()
+    .set("Authorization", "Bearer " + token)
+    const exp = this.http.delete("http://localhost:8080/borrarInfoExperiencia/"+id, {headers})
+   
+  }
 
+  deleteDataEducacion(id: number) {
+    const token = localStorage.getItem('auth_token')
+    let headers = new HttpHeaders()
+    .set("Authorization", "Bearer " + token)
+    const educ = this.http.delete("http://localhost:8080/borrarInfoEducacion/"+id, {headers})
+   
+  }
+  deleteDataProyecto(id: number) {
+    const token = localStorage.getItem('auth_token')
+    let headers = new HttpHeaders()
+    .set("Authorization", "Bearer " + token)
+    const proyect = this.http.delete("http://localhost:8080/borrarInfoProyecto/"+id, {headers})
+   
   }
 }

@@ -19,7 +19,7 @@
         <input type="text"  id="link" placeholder="Enter link" name="link"  value={{link}} [(ngModel)]="link"/>
       
         <app-button-edit></app-button-edit>
-    <app-button-delete></app-button-delete>
+    <app-button-delete (click)="deleteProyecto(pro.id)"></app-button-delete>
       </form>
   </div>
   

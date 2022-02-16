@@ -36,16 +36,14 @@ export class AuthService {
 
   login(name:string, password:string){
     this.http.post(this.url, {username:name, password:password}).subscribe((res: any) => {
-      console.log("name: " + name + " password: " + password)
-      console.log("token: " + res.token.status)
-      console.log("token: " + res.status)
+     
       localStorage.setItem('auth_token', res.token)
-      this.router.navigate(['/home']);
+      this.router.navigate(['/inicio']);
     })
 }
 
   logout(){
-    console.log(localStorage.getItem('auth_token'))
+   
     localStorage.removeItem('auth_token')
   }
 

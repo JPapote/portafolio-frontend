@@ -61,4 +61,8 @@ export class ItemEducationComponent implements OnInit {
       // reader.readAsDataURL(event.target.files[0]);
     }
   }
+
+  deleteEducacion(educacionID:number){
+    this.editeducacion.deleteDataEducacion(educacionID)
+  }
 }
