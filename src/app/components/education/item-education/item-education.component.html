@@ -1,0 +1,25 @@
+<div  class="d-flex justify-content-around">
+<div class="col-md-2 " >
+    <img *ngIf="edu.foto" src="http://localhost:8080/fileImagenes/{{edu.foto}}" class="img-fluid img-thumbnail"  alt="..." >
+    <!-- width="104" height="36" -->
+  </div>
+  <div class="col-md-6">
+    <div class="card-body">
+      <h5 class="card-title">{{edu.institucion}}</h5>
+      <p class="card-text">{{edu.formacion}}</p>
+      <p class="card-text"><small class="text-muted">{{edu.realizacion}}</small></p>
+    </div>
+  </div>
+  <div *ngIf="authService()" class="col-md-6 ">
+    <form  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+      
+      <input type="text"  id="institucion" placeholder="Enter institucion" name="institucion"  value={{institucion}} [(ngModel)]="institucion"/>
+      
+      <input type="text"  id="formacion" placeholder="Enter formacion" name="formacion" value={{formacion}} [(ngModel)]="formacion"/>
+      
+      <input type="text"  id="realizacion" placeholder="Enter realizacion" name="realizacion"  value={{realizacion}} [(ngModel)]="realizacion"/>
+      <input type="file"  id="img"  name="file" (change)="readUrl($event)" /> 
+      <app-button-edit></app-button-edit>
+   </form>
+  </div>
+</div>

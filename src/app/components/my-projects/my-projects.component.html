@@ -1,40 +1,6 @@
-<div class="container p-5 my-5">
-    <div class="row">
-      <div class="col-8">
-    <h2>My First Bootstrap Page</h2>
-  <p>This container has a border and some extra padding and margins.</p>
-  <img src="..." class="img-fluid rounded-start" alt="..."/>
+<div class="container p-5 my-5 ">
+    <h2 class="ps-5 ms-3">Proyectos</h2>
+    <div class="d-flex flex-column-reverse ">
+<app-item-projects *ngFor="let item of projec; let i = index" [pro]= "item"></app-item-projects>
 </div>
-
-  <div *ngIf="authService()" class="col-4">
-  <app-button-delete></app-button-delete>
-  <app-button-edit></app-button-edit>
-</div>
-</div>
-
-<div class="row">
-  <div class="col-8">
-    <h2>My First Bootstrap Page</h2>
-  <p>This container has a border and some extra padding and margins.</p>
-  <img src="..." class="img-fluid rounded-start" alt="..."/>
-</div>
-  <div *ngIf="authService()" class="col-4">
-
-  <app-button-delete></app-button-delete>
-  <app-button-edit></app-button-edit>
-</div>
-</div>
-<div class="row">
-  <div class="col-8">
-    <h2>My First Bootstrap Page</h2>
-  <p>This container has a border and some extra padding and margins.</p>
-  <img src="..." class="img-fluid rounded-start" alt="..."/>
-</div>
-  <div *ngIf="authService()" class="col-4">
-  <app-button-delete></app-button-delete>
-  <app-button-edit></app-button-edit>
-</div>
-
-</div>
-
 </div>

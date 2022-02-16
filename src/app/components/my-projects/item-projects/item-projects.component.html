@@ -1,0 +1,27 @@
+<!-- <div class="d-flex justify-content-center"> -->
+<div class="d-flex justify-content-center me-5 pe-5">
+    <div class="col-md-9">
+      <h3>{{pro.nombre}}</h3>
+    <p>{{pro.descripcion}}</p>
+    <p class="card-text"><small class="text-muted">{{pro.realizacion}}</small></p>
+     <p> <small class="text-muted">{{pro.link}}</small></p>
+  </div>
+    <div *ngIf="authService()" class="col-md-4">
+      <form  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+       
+        <input type="text"  id="nombre" placeholder="Enter nombre" name="nombre"  value={{nombre}} [(ngModel)]="nombre"/>
+        
+        <input type="text"  id="descripcion" placeholder="Enter descripcion" name="descripcion"  value={{descripcion}} [(ngModel)]="descripcion"/>
+        
+        <input type="text"  id="realizacion" placeholder="Enter realizacion" name="realizacion" value={{realizacion}} [(ngModel)]="realizacion"/>
+       
+        
+        <input type="text"  id="link" placeholder="Enter link" name="link"  value={{link}} [(ngModel)]="link"/>
+      
+        <app-button-edit></app-button-edit>
+    <app-button-delete></app-button-delete>
+      </form>
+  </div>
+  
+  <!-- </div> -->
+</div>

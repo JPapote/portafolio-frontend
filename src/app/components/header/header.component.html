@@ -1,22 +1,32 @@
 <div>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark p-3">
-    <div class="container-fluid">
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark  p-3">
+    <div class="container-fluid mx-3">
         <div class="d-flex ">
         <img src="../../../assets/img/logoArgentinaPrograma.jpg" alt="logoArgentinaPrograma" style="width:40px;" class="rounded-pill"/>
         <span class="navbar-text mx-2">Argentina Programa</span>     
+       
      </div>
         <div class="d-flex">
-          <img src="../../../assets/img/logoArgentinaPrograma.jpg" alt="logoArgentinaPrograma" style="width:40px;" class="rounded-pill mx-2"/>
+          <a href="https://github.com/JPapote">
+            <img src="../../../assets/img/github.png" alt="..." style="width:40px;" class="rounded-pill me-1 mt-1 p-1"/>
+          </a>
+          <a href="https://www.linkedin.com/in/javier-antonio-beriguete-baez-986472179/">
+            <img src="../../../assets/img/linke.jpg" alt="..." style="width:40px;" class="rounded-pill me-3 mt-1 p-1"/>
+          </a>
            <a routerLink='/login' routerLinkActive="active" class="navbar-text" *ngIf="!authService()">Login</a>
            <a  routerLink='/home' class="navbar-text" routerLinkActive="active" (click)="logout()" *ngIf="authService()">Logout</a>
         </div>
     </div>
   </nav>
   <div class=" bg-dark rounded">
-    <img src="../../../assets/img/Banner.jpg" alt="Banner" width="100%;" height="500px;"/>
+    <img src="http://localhost:8080/fileImagenes/{{img}}"   alt="Banner" width="100%;" height="500px;"/>
     
   </div>
   <div *ngIf="authService()" class="float-end me-5 ">
+    
+    <form   (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+    <input type="file"  id="image" (change)="readUrl($event)" name="image"/>
   <app-button-edit></app-button-edit>
+    </form>
   </div>
 </div>

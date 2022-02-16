@@ -1,0 +1,15 @@
+<div  class="col  ">
+    <div *ngIf="authService()" class="ms-5">
+      <form  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+      <app-button-delete></app-button-delete>
+      <app-button-edit></app-button-edit>
+      <input type="number" id="nivel" name="nivel"  value={{nivel}} [(ngModel)]="nivel"/>
+      <input type="text" id="nombre" name="nombre"  value={{nombre}} [(ngModel)]="nombre"/>
+    </form>
+    </div>
+  
+    <circle-progress [percent]= "hss.nivel * 10" [title]="hss.nombre" [space]="-10" [radius]="100" [outerStrokeWidth]="10"
+      [innerStrokeWidth]="10" [outerStrokeColor]="'#4882c2'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
+      [animationDuration]="1000"></circle-progress>
+    
+  </div>

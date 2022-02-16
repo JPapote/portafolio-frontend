@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button-edit',
@@ -7,11 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonEditComponent implements OnInit {
 
+  
+  
   constructor() { }
 
   ngOnInit(): void {
   }
-  onClick(){
-    console.log("Esto se debe editar")
-  }
+
+// function img(img: any) {
+//   console.log(img)
+// }
+
 }

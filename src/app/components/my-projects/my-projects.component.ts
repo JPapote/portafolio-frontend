@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../service/auth.service';
+import { DataServerService } from '../service/dataServer/data-server.service';
 
+type proyecto = [{
+  id:number,
+  nombre: string,
+  realizacion: string,
+  descripcion: string,
+  link:string
+}]
 @Component({
   selector: 'app-my-projects',
   templateUrl: './my-projects.component.html',
@@ -8,13 +16,24 @@ import { AuthService } from '../service/auth.service';
 })
 export class MyProjectsComponent implements OnInit {
 
-  constructor(private auth: AuthService) { }
+  projec: proyecto = [{
+    id: 0,
+    nombre: "",
+    realizacion: "",
+    descripcion: "",
+    link: ""
+  }]
+  constructor(private auth: AuthService, private dataskillsdb: DataServerService) { }
 
   ngOnInit(): void {
+    this.projec.pop()
+     this.dataskillsdb.getUserData().subscribe(val => {
+      val.proyecto.map(val => {
+        this.projec.push(val)
+      })
+    }) 
   }
 
-  authService(){
-    return this.auth.logIn()
-  }
+
 
 }

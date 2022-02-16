@@ -16,9 +16,16 @@ import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonDeleteComponent } from './components/button-delete/button-delete.component';
 import { ButtonEditComponent } from './components/button-edit/button-edit.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ItemExperienceComponent } from './components/experience/item-experience/item-experience.component';
+import { ItemHardAndSoftComponent } from './components/hard-and-soft-skills/item-hard-and-soft/item-hard-and-soft.component';
+import { ItemProjectsComponent } from './components/my-projects/item-projects/item-projects.component';
+import { ItemEducationComponent } from './components/education/item-education/item-education.component';
+import { AlifeFileToBase64Module } from 'alife-file-to-base64';
 
 @NgModule({
   declarations: [
+    
     AppComponent,
     HeaderComponent,
     AboutComponent,
@@ -31,10 +38,19 @@ import { ButtonEditComponent } from './components/button-edit/button-edit.compon
     HomeComponent,
     ButtonDeleteComponent,
     ButtonEditComponent,
+    ItemExperienceComponent,
+    ItemHardAndSoftComponent,
+    
+    ItemProjectsComponent,
+         ItemEducationComponent,
+    
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRouting,
+    
+    AlifeFileToBase64Module,
     FormsModule,
     NgCircleProgressModule.forRoot({
       "radius": 60,
@@ -44,7 +60,9 @@ import { ButtonEditComponent } from './components/button-edit/button-edit.compon
       "outerStrokeColor": "#4882c2",
       "outerStrokeGradientStopColor": "#53a9ff",
       "innerStrokeColor": "#e7e8ea",
+      "titleFontSize": "1rem",
       "innerStrokeWidth": 10,
+      "subtitle":"",
       "title": "UI",
       "animateTitle": false,
       "animationDuration": 1000,

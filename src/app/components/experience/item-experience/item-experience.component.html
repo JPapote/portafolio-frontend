@@ -1,0 +1,24 @@
+
+<div class="d-flex justify-content-around"  >
+<div class="col-md-2">
+    <img *ngIf="expe.foto" src="http://localhost:8080/fileImagenes/{{expe.foto}}" class="img-fluid img-thumbnail" alt="..."  />
+  </div>
+  <div class="col-md-6">
+    <div class="card-body">
+      <h5 class="card-title">{{expe.actividad}}</h5>
+      <p class="card-text">{{expe.empresa}}</p>
+      <p class="card-text"><small class="text-muted">{{expe.periodo}}</small></p>
+    </div>
+  </div>
+  <div *ngIf="authService()" class="col-md-6 ">
+    <form  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+      <input type="text"  id="actividad" placeholder="Enter actividad" name="actividad"  value={{expe.actividad}} [(ngModel)]="actividad"/>
+      <input type="text"  id="empresa" placeholder="Enter empresa" name="empresa" value={{expe.empresa}} [(ngModel)]="empresa"/>
+      <input type="text"  id="periodo" placeholder="Enter periodo" name="periodo"  value={{expe.periodo}} [(ngModel)]="periodo"/>
+      <input type="file"  id="img"  name="file" (change)="readUrl($event)" />
+      <app-button-edit></app-button-edit>
+  <app-button-delete></app-button-delete>
+ 
+</form>
+</div>
+</div>

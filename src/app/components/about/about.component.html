@@ -1,20 +1,30 @@
 <div class="container p-5 " >
-  <div class="d-flex justify-content-between">
-  
-    <div class="rounded-circle " style="float: left; margin-top: -130px;" >
-      <img src="../../../assets/img/yo.jpeg" class="rounded-circle" style="width:200px;height: 200px;"alt="yo"/>
-      <p class="card-text text-center"><small class="text-muted"> Javier Beriguete Baez</small></p>
-      <p class="card-text text-center"><small class="text-muted">Fullstack Develop jr.</small></p>
+  <div class="d-flex justify-content-around"  >
+   
+    <div class="rounded-circle col-md-3 text-center" style=" margin-top: -130px;" >
+      <img src="http://localhost:8080/fileImagenes/{{fotoPerfil}}" class="rounded-circle text-center" style="width:200px;height: 200px;"alt="yo"/>
+     
+      <p class="card-text "><small class="text-muted "> {{nombre}} {{apellido}}</small></p>
+      <p class="card-text "><small class="text-muted">{{titulo}}</small></p>
     </div>
-    <div  style="float: right;">
+    <div  class="col-md-6">
       <div class="card-body">
         <h5 class="card-title">Acerda de</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        <p class="card-text">{{about}}</p>
+        <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
       </div>
     </div>
     <div *ngIf="authService()">
-    <app-button-edit ></app-button-edit>
+      <form  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
+        
+        <input type="text"  id="name" placeholder="Enter name" name="nombre"  value={{nombre}} [(ngModel)]="nombre"/>
+        
+        <input type="text"  id="apellido" placeholder="Enter apellido" name="apellido" value={{apellido}} [(ngModel)]="apellido"/>
+        
+        <input type="text"  id="about" placeholder="Enter about" name="about"  value={{about}} [(ngModel)]="about"/>     
+        <input type="file"  id="img"  name="file" (change)="readUrl($event)" />
+        <app-button-edit></app-button-edit>
+    </form>
   </div>
   </div>
 </div>
