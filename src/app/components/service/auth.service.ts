@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClientModule, HttpClient} from '@angular/common/http'
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import {environment} from '../../../environments/environment'
 
 type sobreMi=[{
   id:number,
@@ -28,18 +30,14 @@ sobreMi: sobreMi
   providedIn: 'root'
 })
 export class AuthService {
-  url:string = 'http://localhost:8080/authenticate';
+  url:string = environment.urlGlobal + "authenticate";
 
   token:string | undefined;
 
   constructor(private http:HttpClient, private router: Router) { }
 
   login(name:string, password:string){
-    this.http.post(this.url, {username:name, password:password}).subscribe((res: any) => {
-     
-      localStorage.setItem('auth_token', res.token)
-      this.router.navigate(['/inicio']);
-    })
+    return   this.http.post(this.url, {username:name, password:password})
 }
 
   logout(){

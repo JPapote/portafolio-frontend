@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
 onSubmit(){
+   
   this.dataUser.editImagenHeader(this.id, this.newImg, this.nombreNewImagen)
 }
   readUrl(event:any) {

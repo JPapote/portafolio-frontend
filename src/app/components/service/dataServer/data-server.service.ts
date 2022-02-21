@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-
+import {environment} from '../../../../environments/environment'
 // import { Http, Headers, Response } from '@angular/http';
 import { HttpClient, HttpEvent, HttpHeaders, HttpRequest } from '@angular/common/http';
 
@@ -72,7 +72,7 @@ export class DataServerService {
       .set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
     .append('content-type','application/x-www-form-urlencoded')
     
-    const user = this.http.get<usuario>("http://localhost:8080/traerUser/1", { headers: headers })
+    const user = this.http.get<usuario>(environment.urlGlobal+"traerUser/1", { headers: headers })
     return user
     
 
@@ -85,7 +85,7 @@ export class DataServerService {
     .set("Authorization", "Bearer " + token)
   
 
-    const hsk = this.http.put("http://localhost:8080/editarHdb/"+id, newData, {headers})
+    const hsk = this.http.put(environment.urlGlobal+"editarHdb/"+id, newData, {headers})
     // /editarHdb/{id}
     hsk.subscribe(val => {
       console.log(val)
@@ -94,16 +94,17 @@ export class DataServerService {
   }
 
   editImagenHeader(id: number, nuevaImg:any, nombreImagen:string):Observable<HttpEvent<any>>{
+    
     const token = localStorage.getItem('auth_token')  
     const form:FormData= new FormData();
     const filaBlob = new Blob([nuevaImg])
       form.append("file", filaBlob)
       form.append("nombreNewImagen", nombreImagen)
     let headers = new HttpHeaders()
-    .set("Accept", "application/json")
+    // .set("Accept", "application/json")
     .set("Authorization", "Bearer " + token)
     // .append("Content-Type", "application/x-www-form-urlencoded") 
-      const request = new HttpRequest("PUT","http://localhost:8080/editarBanner/"+id, form, {
+      const request = new HttpRequest("PUT",environment.urlGlobal+"editarBanner/"+id, form, {
         headers
           
         })
@@ -126,7 +127,7 @@ export class DataServerService {
     .set("Accept", "application/json")
     .set("Authorization", "Bearer " + token)
     // .append("Content-Type", "application/x-www-form-urlencoded") 
-      const request = new HttpRequest("PUT","http://localhost:8080/editarSobreMi/"+id, form, {
+      const request = new HttpRequest("PUT",environment.urlGlobal+"editarSobreMi/"+id, form, {
         headers
           
         })
@@ -145,7 +146,7 @@ export class DataServerService {
     .set("Accept", "application/json")
     .set("Authorization", "Bearer " + token)
     // .append("Content-Type", "application/x-www-form-urlencoded") 
-      const request = new HttpRequest("PUT","http://localhost:8080/editarExperiencia/"+id, form, {
+      const request = new HttpRequest("PUT",environment.urlGlobal+"editarExperiencia/"+id, form, {
         headers
           
         })
@@ -164,7 +165,7 @@ export class DataServerService {
     .set("Accept", "application/json")
     .set("Authorization", "Bearer " + token)
     // .append("Content-Type", "application/x-www-form-urlencoded") 
-      const request = new HttpRequest("PUT","http://localhost:8080/editarEducacion/"+id, form, {
+      const request = new HttpRequest("PUT",environment.urlGlobal+"editarEducacion/"+id, form, {
         headers
           
         })
@@ -179,14 +180,14 @@ export class DataServerService {
     .set("Authorization", "Bearer " + token)
   
 
-    const hsk = this.http.put("http://localhost:8080/editarProyecto/"+id, newData, {headers})
+    const hsk = this.http.put(environment.urlGlobal+"editarProyecto/"+id, newData, {headers})
     
   }
   deleteDataHdb(id: number) {
     const token = localStorage.getItem('auth_token')
     let headers = new HttpHeaders()
     .set("Authorization", "Bearer " + token)
-    const hdb = this.http.delete("http://localhost:8080/borrarInfoHdb/"+id, {headers})
+    const hdb = this.http.delete(environment.urlGlobal+"borrarInfoHdb/"+id, {headers})
    
   }
 
@@ -194,7 +195,7 @@ export class DataServerService {
     const token = localStorage.getItem('auth_token')
     let headers = new HttpHeaders()
     .set("Authorization", "Bearer " + token)
-    const exp = this.http.delete("http://localhost:8080/borrarInfoExperiencia/"+id, {headers})
+    const exp = this.http.delete(environment.urlGlobal+"borrarInfoExperiencia/"+id, {headers})
    
   }
 
@@ -202,14 +203,14 @@ export class DataServerService {
     const token = localStorage.getItem('auth_token')
     let headers = new HttpHeaders()
     .set("Authorization", "Bearer " + token)
-    const educ = this.http.delete("http://localhost:8080/borrarInfoEducacion/"+id, {headers})
+    const educ = this.http.delete(environment.urlGlobal+"borrarInfoEducacion/"+id, {headers})
    
   }
   deleteDataProyecto(id: number) {
     const token = localStorage.getItem('auth_token')
     let headers = new HttpHeaders()
     .set("Authorization", "Bearer " + token)
-    const proyect = this.http.delete("http://localhost:8080/borrarInfoProyecto/"+id, {headers})
+    const proyect = this.http.delete(environment.urlGlobal+"borrarInfoProyecto/"+id, {headers})
    
   }
 }
