@@ -22,9 +22,9 @@ export class ItemExperienceComponent implements OnInit {
   id: 0,
   periodo: ""
 }
-  actividad:string =""
-  empresa:string = ""
-  periodo:string = ""
+  actividad?:string 
+  empresa?:string 
+  periodo?:string
   imgEdit:any
   nombreNewImagen=""
   constructor(private auth: AuthService, private editarExperiencia: DataServerService) { }
