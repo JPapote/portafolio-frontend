@@ -24,7 +24,10 @@ export class HeaderComponent implements OnInit {
 
 onSubmit(){
    
-  this.dataUser.editImagenHeader(this.id, this.newImg, this.nombreNewImagen)
+  this.dataUser.editImagenHeader(this.id, this.newImg, this.nombreNewImagen).subscribe(val => {
+   console.log(val.type.toString())
+  })
+
 }
   readUrl(event:any) {
     if (event.target.files && event.target.files[0]) {
