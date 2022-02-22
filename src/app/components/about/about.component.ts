@@ -43,7 +43,9 @@ export class AboutComponent implements OnInit {
      apellido: this.apellido,
       sobreMi: this.about,
     }
-  this.dataAboutMe.editSobreMi(this.id, newData, this.imgEdit, this.nombreNewImagen)
+  this.dataAboutMe.editSobreMi(this.id, newData, this.imgEdit, this.nombreNewImagen).subscribe(val => {
+    console.log(val.type.toString())
+   })
 
   }
 

@@ -43,7 +43,9 @@ export class ItemExperienceComponent implements OnInit {
        empresa : this.empresa,
        periodo: this.periodo,
     }
-    this.editarExperiencia.editarExperiencia(this.expe.id, experienciaEdita, this.imgEdit, this.nombreNewImagen)
+    this.editarExperiencia.editarExperiencia(this.expe.id, experienciaEdita, this.imgEdit, this.nombreNewImagen).subscribe(val => {
+      console.log(val.type.toString())
+     })
   }
 
   readUrl(event:any) {
