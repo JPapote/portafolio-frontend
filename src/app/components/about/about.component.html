@@ -1,13 +1,13 @@
-<div class="container p-5 " >
-  <div class="d-flex justify-content-around"  >
+<div class="containe p-5" >
+  <div class="d-flex justify-content-around" id="perfil" >
    
-    <div class="rounded-circle col-md-3 text-center" style=" margin-top: -130px;" >
-      <img *ngIf="fotoPerfil" src="https://vast-tundra-78045.herokuapp.com/fileImagenes/{{fotoPerfil}}" class="rounded-circle text-center" style="width:200px;height: 200px;"alt="yo"/>
+    <div class="rounded-circle col-3 col-md-3 text-center" id="perfil2" style=" margin-top: -130px;" >
+      <img *ngIf="fotoPerfil" src="https://vast-tundra-78045.herokuapp.com/fileImagenes/{{fotoPerfil}}" class="rounded-circle" alt="..."/>
      
       <p class="card-text "><small class="text-muted "> {{nombre}} {{apellido}}</small></p>
       <p class="card-text "><small class="text-muted">{{titulo}}</small></p>
     </div>
-    <div  class="col-md-6">
+    <div  class="col-6 col-md-6">
       <div class="card-body">
         <h5 class="card-title">Acerda de</h5>
         <p class="card-text">{{about}}</p>
