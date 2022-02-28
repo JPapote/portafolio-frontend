@@ -1,0 +1,28 @@
+img{
+    width:100px;
+    height: 100px;
+}
+@media only screen and (min-width: 720px) {
+    img {
+        width:200px;
+        height: 200px;
+    }
+    
+
+  }
+
+  @media only screen and (max-width: 720px) {
+    #exp{
+        display: block !important;
+
+    }
+    #foto{
+        text-align: center;
+        padding-right: 2rem;
+    }
+
+    #colExpe{
+        padding: 0px !important;
+        justify-items: center;
+    }
+  }

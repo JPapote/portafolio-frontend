@@ -1,0 +1,7 @@
+
+
+@media only screen and (max-width: 576px) {
+    #navBar{
+        justify-content: space-around;
+    }
+}
