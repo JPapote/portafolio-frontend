@@ -20,7 +20,7 @@
         <input type="text"  id="name" placeholder="Enter name" name="nombre"  value={{nombre}} [(ngModel)]="nombre"/>
         
         <input type="text"  id="apellido" placeholder="Enter apellido" name="apellido" value={{apellido}} [(ngModel)]="apellido"/>
-        
+        <input type="text" id="titulo" placeholder="Enter titulo" name="titulo" value={{titulo}} [(ngModel)]="titulo"/>
         <input type="text"  id="about" placeholder="Enter about" name="about"  value={{about}} [(ngModel)]="about"/>     
         <input type="file"  id="img"  name="file" (change)="readUrl($event)" />
         <app-button-edit></app-button-edit>
