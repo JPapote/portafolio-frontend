@@ -43,7 +43,9 @@ export class ItemEducationComponent implements OnInit {
       formacion : this.formacion,
       realizacion : this.realizacion
     }
-    this.editeducacion.editarEducacion(this.edu.id, edit, this.imgEdit, this.nombreNewImagen)
+    this.editeducacion.editarEducacion(this.edu.id, edit, this.imgEdit, this.nombreNewImagen).subscribe(val => {
+      console.log(val.type.toString())
+     })
   }
 
   readUrl(event:any) {

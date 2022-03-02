@@ -89,7 +89,7 @@ export class DataServerService {
     // /editarHdb/{id}
     hsk.subscribe(val => {
       console.log(val)
-    })
+     })
 
   }
 
@@ -181,7 +181,9 @@ export class DataServerService {
   
 
     const hsk = this.http.put(environment.urlGlobal+"editarProyecto/"+id, newData, {headers})
-    
+    hsk.subscribe(val => {
+      console.log(val.toString())
+     })
   }
   deleteDataHdb(id: number) {
     const token = localStorage.getItem('auth_token')
