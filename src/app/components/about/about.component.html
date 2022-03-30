@@ -1,5 +1,6 @@
 <div class="containe p-5" >
-  <div class="d-flex justify-content-around" id="perfil" >
+ 
+  <div *ngIf="nombre" class="d-flex justify-content-around" id="perfil" >
    
     <div class="rounded-circle col-3 col-md-3 text-center" id="perfil2" style=" margin-top: -130px;" >
       <img *ngIf="fotoPerfil" src="https://vast-tundra-78045.herokuapp.com/fileImagenes/{{fotoPerfil}}" class="rounded-circle" alt="..."/>
@@ -27,4 +28,5 @@
     </form>
   </div>
   </div>
+ 
 </div>
