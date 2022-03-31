@@ -10,12 +10,14 @@ import { DataServerService } from '../service/dataServer/data-server.service';
 })
 export class HomeComponent implements OnInit {
  
+  id?:number
   
-  constructor(private img: DataServerService) { }
+  constructor(private dat: DataServerService) { }
 
   ngOnInit(): void {
- 
-  
+    this.dat.getUserData().subscribe(val => {
+     this.id = val.id
+    })
   
   }
 

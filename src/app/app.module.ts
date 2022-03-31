@@ -22,6 +22,7 @@ import { ItemHardAndSoftComponent } from './components/hard-and-soft-skills/item
 import { ItemProjectsComponent } from './components/my-projects/item-projects/item-projects.component';
 import { ItemEducationComponent } from './components/education/item-education/item-education.component';
 import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { AlifeFileToBase64Module } from 'alife-file-to-base64';
     
     ItemProjectsComponent,
          ItemEducationComponent,
+         SpinnerComponent,
     
   ],
   imports: [
