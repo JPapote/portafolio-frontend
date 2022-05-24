@@ -1,6 +1,6 @@
 <div class="containe p-5" >
- 
-  <div *ngIf="nombre" class="d-flex justify-content-around" id="perfil" >
+ <div>
+  <div *ngIf="nombre" class="d-flex flex-wrap justify-content-around" id="perfil" >
    
     <div class="rounded-circle col-3 col-md-3 text-center" id="perfil2" style=" margin-top: -130px;" >
       <img *ngIf="fotoPerfil" src="https://vast-tundra-78045.herokuapp.com/fileImagenes/{{fotoPerfil}}" class="rounded-circle" alt="..."/>
@@ -15,18 +15,27 @@
         <!-- <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p> -->
       </div>
     </div>
-    <div *ngIf="authService()">
-      <form  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
-        
-        <input type="text"  id="name" placeholder="Enter name" name="nombre"  value={{nombre}} [(ngModel)]="nombre"/>
-        
-        <input type="text"  id="apellido" placeholder="Enter apellido" name="apellido" value={{apellido}} [(ngModel)]="apellido"/>
-        <input type="text" id="titulo" placeholder="Enter titulo" name="titulo" value={{titulo}} [(ngModel)]="titulo"/>
-        <input type="text"  id="about" placeholder="Enter about" name="about"  value={{about}} [(ngModel)]="about"/>     
-        <input type="file"  id="img"  name="file" (change)="readUrl($event)" />
-        <app-button-edit></app-button-edit>
-    </form>
+    
   </div>
-  </div>
- 
+  <div *ngIf="authService()" >
+    <form  (ngSubmit)="onSubmit()" class="d-flex flex-row flex-wrap justify-content-center" enctype="multipart/form-data">
+    <div class="m-1">
+      <input type="text"  id="name" placeholder="Enter name" name="nombre"  value={{nombre}} [(ngModel)]="nombre"/>
+    </div>
+    <div class="m-1">
+  
+      <input type="text"  id="apellido" placeholder="Enter apellido" name="apellido" value={{apellido}} [(ngModel)]="apellido"/>
+    </div>
+    <div class="m-1">
+      <input type="text" id="titulo" placeholder="Enter titulo" name="titulo" value={{titulo}} [(ngModel)]="titulo"/>
+    </div>
+    <div class="m-1">
+      <input type="text"  id="about" placeholder="Enter about" name="about"  value={{about}} [(ngModel)]="about"/>     
+    </div>
+    <div class="m-1"> <input type="file"  id="img"  name="file" (change)="readUrl($event)" /></div>
+  <app-button-edit></app-button-edit>
+
+  </form>
+</div>
+</div>
 </div>

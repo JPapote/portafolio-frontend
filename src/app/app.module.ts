@@ -21,7 +21,7 @@ import { ItemExperienceComponent } from './components/experience/item-experience
 import { ItemHardAndSoftComponent } from './components/hard-and-soft-skills/item-hard-and-soft/item-hard-and-soft.component';
 import { ItemProjectsComponent } from './components/my-projects/item-projects/item-projects.component';
 import { ItemEducationComponent } from './components/education/item-education/item-education.component';
-import { AlifeFileToBase64Module } from 'alife-file-to-base64';
+
 import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
@@ -52,7 +52,7 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     HttpClientModule,
     AppRouting,
     
-    AlifeFileToBase64Module,
+    
     FormsModule,
     NgCircleProgressModule.forRoot({
       "radius": 60,

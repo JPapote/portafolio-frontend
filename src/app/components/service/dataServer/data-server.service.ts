@@ -45,7 +45,6 @@ type usuario =
     hdb: [],
     id: number,
     nombre: string,
-    password: string,
     educacion: [],
     experiencia:[],
     fotobaner: string,
@@ -65,13 +64,7 @@ export class DataServerService {
 
   getUserData():Observable<usuario>{
     let headers = new HttpHeaders()
-      .set('Content-Type', 'application/json') 
-      .set("Access-Control-Allow-Origin", "*")
-      .set("Access-Control-Allow-Methods", "GET")
-      .set('Access-Control-Allow-Credentials', 'true')
-      .set("Access-Control-Allow-Headers", "Content-Type, Authorization, X-Requested-With")
-    .append('content-type','application/x-www-form-urlencoded')
-    
+      
     const user = this.http.get<usuario>(environment.urlGlobal+"traerUser/1", { headers: headers })
     return user
     

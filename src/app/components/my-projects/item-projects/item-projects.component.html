@@ -1,4 +1,5 @@
 <!-- <div class="d-flex justify-content-center"> -->
+  <div>
 <div class="d-flex justify-content-center">
     <div class="col-md-9">
       <h4>{{pro.nombre}}</h4>
@@ -6,22 +7,23 @@
     <p class="card-text"><small class="text-muted">{{pro.realizacion}}</small></p>
      <p> <small class="text-muted">{{pro.link}}</small></p>
   </div>
-    <div *ngIf="authService()" class="col-md-4">
+</div>
+    <div *ngIf="authService()" class="d-flex flex-row flex-wrap justify-content-center">
       <form  (ngSubmit)="onSubmit()" enctype="multipart/form-data">
        
-        <input type="text"  id="nombre" placeholder="Enter nombre" name="nombre"  value={{nombre}} [(ngModel)]="nombre"/>
+        <div class="m-1"><input type="text"  id="nombre" placeholder="Enter nombre" name="nombre"  value={{nombre}} [(ngModel)]="nombre"/></div>
         
-        <input type="text"  id="descripcion" placeholder="Enter descripcion" name="descripcion"  value={{descripcion}} [(ngModel)]="descripcion"/>
+        <div class="m-1"><input type="text"  id="descripcion" placeholder="Enter descripcion" name="descripcion"  value={{descripcion}} [(ngModel)]="descripcion"/></div>
         
-        <input type="text"  id="realizacion" placeholder="Enter realizacion" name="realizacion" value={{realizacion}} [(ngModel)]="realizacion"/>
+        <div class="m-1"> <input type="text"  id="realizacion" placeholder="Enter realizacion" name="realizacion" value={{realizacion}} [(ngModel)]="realizacion"/></div>
        
         
-        <input type="text"  id="link" placeholder="Enter link" name="link"  value={{link}} [(ngModel)]="link"/>
+          <div class="m-1"> <input type="text"  id="link" placeholder="Enter link" name="link"  value={{link}} [(ngModel)]="link"/></div>
       
         <app-button-edit></app-button-edit>
     <app-button-delete (click)="deleteProyecto(pro.id)"></app-button-delete>
       </form>
   </div>
   
-  <!-- </div> -->
+ 
 </div>

@@ -3,8 +3,8 @@
       <form  (ngSubmit)="onSubmit($event)" enctype="multipart/form-data">
       <app-button-delete (click)="deleteHdb(hss.id)"></app-button-delete>
       <app-button-edit></app-button-edit>
-      <input type="number" id="nivel" name="nivel"  value={{nivel}} [(ngModel)]="nivel"/>
-      <input type="text" id="nombre" name="nombre"  value={{nombre}} [(ngModel)]="nombre"/>
+      <input type="number" id="nivel" name="nivel"  value={{nivel}} placeholder="nivel" [(ngModel)]="nivel"/>
+      <input type="text" id="nombre" name="nombre"  value={{nombre}} placeholder="habilidad" [(ngModel)]="nombre"/>
     </form>
     </div>
   
